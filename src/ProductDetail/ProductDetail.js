@@ -25,7 +25,7 @@ const ProductDetail = () => {
 
   useEffect(() => {
     _fetchData();
-  }, []);
+  }, [_fetchData]);
 
   return (
     <div style={{
