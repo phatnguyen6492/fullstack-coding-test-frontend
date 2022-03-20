@@ -1,0 +1,32 @@
+.delivery-status-picker-menu {
+    background-color: #282c34;
+    color: white;
+    padding: 7px;
+    width: 116px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+}
+.delivery-status-picker-menu .menu-item{
+    box-sizing: content-box;
+    padding: 6px;
+    border-radius: 3px;
+}
+.delivery-status-picker-menu .menu-item:hover{
+    background-color: coral;
+    margin: 2px;
+    cursor: grab;
+}
+
+.delivery-status-picker-arrow {
+    color: #282c34;
+}
+
+.delivery-status-picker-button {
+    background-color: coral;
+    border-radius: 8px;
+    border: none;
+    height: 40px;
+    color: white;
+}
