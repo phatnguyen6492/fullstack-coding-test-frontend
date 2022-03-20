@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import {
   useParams
 } from "react-router-dom";
 const ProductDetail = () => {
   let { id } = useParams();
   const [product, setProduct] = useState({})
-  const _fetchData = () => {
+
+  const _fetchData = useCallback(() => {
     const httpRequest = new XMLHttpRequest();
 
     httpRequest.open(
@@ -21,11 +22,16 @@ const ProductDetail = () => {
         }
       }
     };
-  }
+  }, []);
 
   useEffect(() => {
     _fetchData();
-  }, []);
+  }, [_fetchData]);
+
+
+  useEffect(() => {
+    _fetchData()
+  }, [_fetchData])
 
   return (
     <div style={{
