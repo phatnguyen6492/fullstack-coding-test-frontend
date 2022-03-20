@@ -12,7 +12,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <nav>
+        <nav style={{padding: 16}}>
           <Link to="/">Home</Link>
           <Link to="/products" style={{marginLeft: 20}}>Products</Link>
         </nav>
