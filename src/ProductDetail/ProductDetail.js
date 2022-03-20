@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useCallback} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   useParams
 } from "react-router-dom";
@@ -26,7 +26,7 @@ const ProductDetail = () => {
     }
 
     _fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <div style={{
