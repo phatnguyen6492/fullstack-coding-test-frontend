@@ -74,7 +74,7 @@ const Products = () => {
 
   return (
     <div style={{padding: '16px'}}>
-      <h2>Products</h2>
+      <h2>Products List</h2>
       <div className="ag-theme-alpine" style={{height: '560px', width: '100%'}}>
         <AgGridReact
           rowData={rowData}
