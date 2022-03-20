@@ -6,32 +6,27 @@ const ProductDetail = () => {
   let { id } = useParams();
   const [product, setProduct] = useState({})
 
-  const _fetchData = useCallback(() => {
-    const httpRequest = new XMLHttpRequest();
+  useEffect(() => {
+    const _fetchData = () => {
+      const httpRequest = new XMLHttpRequest();
 
-    httpRequest.open(
-      "GET",
-      `http://localhost:3000/product/${id}`
-    );
-    httpRequest.send();
-    httpRequest.onreadystatechange = () => {
-      if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-        const response = JSON.parse(httpRequest.responseText)
-        if (response) {
-          setProduct(response)
+      httpRequest.open(
+        "GET",
+        `http://localhost:3000/product/${id}`
+      );
+      httpRequest.send();
+      httpRequest.onreadystatechange = () => {
+        if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+          const response = JSON.parse(httpRequest.responseText)
+          if (response) {
+            setProduct(response)
+          }
         }
-      }
-    };
-  }, []);
+      };
+    }
 
-  useEffect(() => {
     _fetchData();
-  }, [_fetchData]);
-
-
-  useEffect(() => {
-    _fetchData()
-  }, [_fetchData])
+  }, []);
 
   return (
     <div style={{
